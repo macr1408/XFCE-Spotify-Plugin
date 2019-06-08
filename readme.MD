@@ -31,8 +31,7 @@ For Linux Mint, you can download Genmon from the software manager.
 2. Make it ask for these permissions:
     - user-read-playback-state
     - user-read-currently-playing
-3. Follow [Spotify's OAuth guide](https://developer.spotify.com/documentation/general/guides/authorization-guide/)
-4. Follow the OAuth flow until you get an Access Token and the Refresh Token
+3. Follow [Spotify's OAuth guide](https://developer.spotify.com/documentation/general/guides/authorization-guide/) until you get an Access Token and the Refresh Token
 
 ### Installing this plugin
 1. Download/Clone this repo
@@ -42,7 +41,7 @@ For Linux Mint, you can download Genmon from the software manager.
 
     - **REFRESHTOKEN**: This is the Refresh Token you got from the OAuth process described before
 
-    - **AUTHHEADER**: Base 64 encoded string containing the basic authorization for your app. Example: base64(clientid:clientsecret)
+    - **AUTHHEADER**: Base 64 encoded string containing the basic authorization for your app. Format: base64(<clientid>:<clientsecret>). More details can be found in the [Spotify's OAuth guide](https://developer.spotify.com/documentation/general/guides/authorization-guide/)
 
 3. Create a genmo item in your taskbar
 4. Configure this genmo item to execute the file xfce-spotify-main.sh, hide the label and set a period of 10 seconds
@@ -60,7 +59,7 @@ Hold on buddy, It's not that easy, Spotify has a requests limit (actually unknow
 
 ### **I don't like the progress bar (or any other element), can I remove it?**
 
-Yes sure, just comment one line and it will be done. Go to xfce-spotify-main.sh and comment these lines:
+Yes sure, just comment one line and it will be gone. Go to xfce-spotify-main.sh and comment these lines:
 
     Line 33 - Song information
     Line 34 - Album information when hovering
