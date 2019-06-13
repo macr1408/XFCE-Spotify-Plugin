@@ -3,6 +3,11 @@
 # Script made by macr1408 (https://github.com/macr1408)
 # Made for non Commercial use
 
+if ! pgrep -x spotify >/dev/null && ! pgrep -x chrome >/dev/null && ! pgrep -x firefox >/dev/null
+then
+    exit 1;
+fi
+
 CURRENTDIR=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 CONFIGFILE="$CURRENTDIR/config.sh"
 REFRESHFILE="$CURRENTDIR/refresh_accesstoken.sh"
@@ -30,10 +35,10 @@ TOTALPROGRESS=$(expr $CURRENTPROGRESS / $TOTALPROGRESS )
 
 if [ -n "$TRACK" ]
 then
-echo "<txt>$ARTIST - $TRACK  </txt>"
-echo "<tool>$ALBUM</tool>"
-echo "<bar>$TOTALPROGRESS</bar>"
-echo "<txtclick>exo-open $SONGLINK</txtclick>"
+    echo "<txt>$ARTIST - $TRACK  </txt>"
+    echo "<tool>$ALBUM</tool>"
+    echo "<bar>$TOTALPROGRESS</bar>"
+    echo "<txtclick>exo-open $SONGLINK</txtclick>"
 else
-echo "<txt></txt>"
+    echo "<txt></txt>"
 fi
