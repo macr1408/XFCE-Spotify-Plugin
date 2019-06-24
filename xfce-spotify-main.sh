@@ -5,6 +5,7 @@
 
 if ! pgrep -x spotify >/dev/null && ! pgrep -x chrome >/dev/null && ! pgrep -x firefox >/dev/null
 then
+    echo "<txt></txt>"
     exit 1;
 fi
 
